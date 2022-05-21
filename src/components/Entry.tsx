@@ -11,19 +11,7 @@ const Entry: Component<IEntryElement> = (props) => {
 	let isLink:boolean = false;
 
 	onMount(() => {
-		console.log(props.name);
-		if (props.opinion.includes("https")) {
-			isLink = true;
-			console.log("isLink");
-		}if (props.opinion.includes(".mp4")) {
-			isVideo = true;
-			isLink = false;
-			console.log("video");
-		}if (props.opinion.includes(".jpg") || props.opinion.includes(".png")) {
-			isImage = true;
-			isLink = false;
-			console.log("image");
-		}
+		document.getElementsByTagName('video')[0].volume = 0.5;
 	});
 	
 	return (
@@ -33,7 +21,7 @@ const Entry: Component<IEntryElement> = (props) => {
 					<h1 class="text-xl text-gray-700 mb-1" id = {props.name}>{props.name}</h1>
 
 					<Show when={props.opinion.includes(".mp4")}>
-						<video muted={true} controls={true} class="w-4/5">
+						<video muted={false} controls={true} class="w-4/5">
                     		<source src={ props.opinion } type="video/mp4" />
                 		</video>
 					</Show>
@@ -41,7 +29,7 @@ const Entry: Component<IEntryElement> = (props) => {
 						<img src={ props.opinion } alt={ props.name } class="w-3/5 h-auto"/>
 					</Show>
 					<Show when={props.opinion.includes("https") && !props.opinion.includes(".png") && !props.opinion.includes(".jpg") && !props.opinion.includes(".mp4")}>
-						<a href={props.opinion} class="underline decoration-solid decoration-slate-700 text-slate-700 hover:decoration-slate-500 hover:text-slate-500">{props.opinion}</a>
+						<a href={props.opinion} class="underline decoration-solid decoration-slate-700 text-slate-700 hover:decoration-slate-500 hover:text-slate-500 break-words">{props.opinion}</a>
 					</Show>
 
 					<Show when={!props.opinion.includes("https") && !props.opinion.includes(".png") && !props.opinion.includes(".jpg") && !props.opinion.includes(".mp4")}>

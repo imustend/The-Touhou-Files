@@ -11,7 +11,7 @@ const Entries: Component = (props) => {
 	 });
 
 	return (
-		<div class="flex flex-col items-start w-4/5 m-auto">
+		<div class="flex flex-col items-start w-4/5 m-auto overflow-x-hidden">
 
 			<h2 class="text-3xl text-gray-700 mb-8">Entires</h2>
 
