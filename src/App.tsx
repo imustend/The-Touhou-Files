@@ -18,6 +18,11 @@ const App: Component = () => {
 			<SectionDivider/>
 
 			<Entries/>
+
+			<SectionDivider/>
+			<div class="flex flex-col items-start w-4/5 m-auto overflow-x-hidden mb-8">
+				<img src='https://cdn.discordapp.com/attachments/909796769800519711/992537412498636911/unknown.png'></img>
+			</div>
 	
 			<Footer/>
 	  </>
