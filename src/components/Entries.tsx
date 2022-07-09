@@ -13,7 +13,7 @@ const Entries: Component = (props) => {
 	return (
 		<div class="flex flex-col items-start w-4/5 m-auto overflow-x-hidden">
 
-			<h2 class="text-3xl text-gray-700 mb-8">Entires</h2>
+			<h2 class="text-3xl text-gray-700 mb-8">Entries</h2>
 
 			<For each={list.characters}>{(entry: IEntry) => 
 				<Entry name={entry.name} opinion={entry.opinion}/>
